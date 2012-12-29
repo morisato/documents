@@ -7,6 +7,14 @@
 #
 ##########################################################
 
+■lightdm の guest を禁止
+/etc/lightdm/lightdm.conf に allow-guest を設定する
+
+[SeatDefaults]
+greeter-session=lightdm-gtk-greeter
+user-session=Lubuntu
+allow-guest=false
+
 ■Zenkaku_Hankaku がリピートする
 VirtualBox で Zenkaku_Hankaku を押下すると延々とリピートする
    xset -r 101
@@ -43,7 +51,7 @@ borders don't fit within the image
 ##########################################################
 
 ■aAndroid の build が __as_printf_chk() でエラーになる
-binutil-dev パッケージの libbfd.so が無いため。たぶん。
+libasprintf は gnulib や libasprintf0c2 に含まれているが、これ入れてもダメだった。
 http://packages.ubuntu.com でファイル検索が出来る。
 ${ANDROID_SRC}/external/oprofile/common.mk を次のようにすれば良い。
     ifeq ($(HOST_OS)-$(HOST_ARCH),linux-x86)
