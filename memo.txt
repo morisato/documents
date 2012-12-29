@@ -2,8 +2,47 @@
 # 外に出しても良いメモ
 #
 
+##########################################################
+# ubuntu
+#
+##########################################################
 
-■Android の build が __as_printf_chk() でエラーになる
+■Zenkaku_Hankaku がリピートする
+VirtualBox で Zenkaku_Hankaku を押下すると延々とリピートする
+   xset -r 101
+   xset -r 49
+とすれば良い
+
+■Home directory の言語が邪魔過ぎる
+$LANG=C xdg-user-dirs-update
+とすれば良い。
+これ気を利かせたつもりなら大きなお世話だわ。邪魔でしかない
+
+■Anthy の設定画面が起動しない
+言語バー出してボタン押しても反応しない。
+何かしらのパッケージを入れれば出るが、どれか忘れた。
+おかげで仮名入力できない。早くなんとかして欲しい。
+今のところlubuntu1210を素で入れたら再現する。
+
+■Theme error
+言うまでもなく。
+
+** (leafpad:24723): WARNING **: Invalid borders specified for theme pixmap:
+        /usr/share/themes/Lubuntu-default/gtk-2.0/images/null.png,
+borders don't fit within the image
+
+** (leafpad:24723): WARNING **: Invalid borders specified for theme pixmap:
+        /usr/share/themes/Lubuntu-default/gtk-2.0/images/scrollbar_vertical.png,
+borders don't fit within the image
+
+
+
+##########################################################
+# Android
+#
+##########################################################
+
+■aAndroid の build が __as_printf_chk() でエラーになる
 binutil-dev パッケージの libbfd.so が無いため。たぶん。
 http://packages.ubuntu.com でファイル検索が出来る。
 ${ANDROID_SRC}/external/oprofile/common.mk を次のようにすれば良い。
