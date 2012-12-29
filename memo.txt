@@ -1,0 +1,15 @@
+#
+# 外に出しても良いメモ
+#
+
+
+■Android の build が __as_printf_chk() でエラーになる
+binutil-dev パッケージの libbfd.so が無いため。たぶん。
+http://packages.ubuntu.com でファイル検索が出来る。
+${ANDROID_SRC}/external/oprofile/common.mk を次のようにすれば良い。
+    ifeq ($(HOST_OS)-$(HOST_ARCH),linux-x86)
+    #HAVE_LIBFD := true
+    HAVE_LIBFD := false
+    endif
+
+
