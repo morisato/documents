@@ -1,6 +1,7 @@
-#
-# 外に出しても良いメモ
-#
+////////////////////////////////////////////////////////////////////////////////////////////////
+// 外に出しても良いメモ
+////////////////////////////////////////////////////////////////////////////////////////////////
+内容の扱いは お好きにどうぞ
 
 ##########################################################
 # ubuntu
@@ -14,6 +15,10 @@
 greeter-session=lightdm-gtk-greeter
 user-session=Lubuntu
 allow-guest=false
+
+■lightdm の背景
+/etc/xdg/lubuntu/lightdm/lightdm-gtk-greeter.conf
+の background とか。
 
 ■Zenkaku_Hankaku がリピートする
 VirtualBox で Zenkaku_Hankaku を押下すると延々とリピートする
